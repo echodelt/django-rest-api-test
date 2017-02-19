@@ -1,0 +1,31 @@
+{% load static %}
+
+<div class="row article-view">
+
+    <div class="row article-row">
+        <div class="col-md-4 col-sm-4 col-xs-12 article-field-name">Title&nbsp;:</div>
+        <div class="col-md-8 col-sm-8 col-xs-12 article-field-value">{{ article.title }}</div>
+    </div>
+
+    <div class="row article-row">
+        <div class="col-md-4 col-sm-4 col-xs-12 article-field-name">Description&nbsp;:</div>
+        <div class="col-md-8 col-sm-8 col-xs-12 article-field-value">{{ article.description }}</div>
+    </div>
+
+    <div class="row article-row">
+        <div class="col-md-4 col-sm-4 col-xs-12 article-field-name">Published&nbsp;:</div>
+        <div class="col-md-8 col-sm-8 col-xs-12 article-field-value">
+            {% if article.is_published %}
+            Yes
+            {% else %}
+            No
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="row article-row">
+        <div class="col-md-4 col-sm-4 col-xs-12 article-field-name">Publication date&nbsp;:</div>
+        <div class="col-md-8 col-sm-8 col-xs-12 article-field-value">{{ article.publication_date }}</div>
+    </div>
+
+</div>

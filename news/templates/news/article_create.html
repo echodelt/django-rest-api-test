@@ -1,0 +1,54 @@
+{% extends "news/news-base.html" %}
+{% load static %}
+
+{% block extrahead %}
+ {{ block.super }}
+<script src="{% static 'jquery/jquery-1.12.4.min.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+{{ form.media }}
+{% endblock extrahead %}
+
+{% block news_container %}
+
+<div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-4 article-action">
+            <h1 class="toto">New article</h1>
+        </div>
+    </div>
+
+    <form id="create-article-form" method="post">
+
+        {% csrf_token %}
+
+        {% include "news/article_form.html" %}
+
+        <div class="form-group row">
+            <div class="col-md-8 col-md-offset-4">
+                <div class="row">
+                    <div class="col-md-3 col-md-offset-5 col-sm-3 col-sm-offset-5 col-xs-12">
+                        <span class="btns-containers pull-right">
+                            <a href="{% url 'news:articles_list' %}" class="btn btn-secondary">Cancel</a>
+                        </span>
+                    </div>
+                    <div class="col-md-4 col-sm-3 col-xs-12">
+                        <span class="btns-containers pull-right">
+                            <input class="btn btn-danger" id="create-article-form-submit" type="submit" value="Create article" />
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock news_container %}
+
+{% block extrafoot %}
+{% comment %}
+Empty because the jquery / bootstrap .js file have already been loaded in the extrahead block
+{% endcomment %}
+{% endblock extrafoot %}
