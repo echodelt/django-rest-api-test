@@ -1,0 +1,33 @@
+{% extends "news/news-base.html" %}
+{% load static %}
+
+{% block news_container %}
+
+<div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-4 col-sm-8 col-sm-offset-4 col-xs-12 article-action">
+            <h1>Article detail</h1>
+        </div>
+    </div>
+
+    {% include "news/article_preview.html" %}
+
+    <div class="row article-row">
+        <div class="col-md-4 col-sm-4 col-xs-12 article-field-name"></div>
+        <div class="col-md-8 col-sm-8 col-xs-12">
+            <span class="btns-containers">
+                <a href="{% url 'news:article_update' article.id %}" class="btn btn-warning">Update this article</a>
+            </span>
+            <span class="btns-containers">
+                <a href="{% url 'news:article_delete' article.id %}" class="btn btn-warning">Delete this article</a>
+            </span>
+            <span class="btns-containers">
+                <a href="{% url 'news:articles_list' %}" class="btn btn-info">Back to dashboard</a>
+            </span>
+        </div>
+    </div>
+
+</div>
+
+{% endblock news_container %}

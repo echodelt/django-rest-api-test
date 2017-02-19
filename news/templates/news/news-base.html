@@ -1,0 +1,20 @@
+{% extends "site-base.html" %}
+{% load static %}
+
+{% block title %}<title>{{ page_title }}</title>{% endblock title%}
+
+{% block extrahead %}
+ {{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% static 'news/css/news.css' %}" />
+{% endblock extrahead%}
+
+{% block page_content %}
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="row" id="news-manage-container">
+        {% block news_container %}
+        {% endblock news_container %}
+        </div>
+    </div>
+</div>
+{% endblock page_content %}

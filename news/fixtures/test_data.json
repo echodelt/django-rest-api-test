@@ -1,0 +1,22 @@
+[
+    {
+        "model": "api.article",
+        "pk": 1,
+        "fields": {
+            "title": "1st article",
+            "description": "1st article content",
+            "is_published": false,
+            "publication_date": "2017-02-16T12:12:49Z"
+        }
+    },
+    {
+        "model": "api.article",
+        "pk": 2,
+        "fields": {
+            "title": "2nd article",
+            "description": "2nd article content",
+            "is_published": true,
+            "publication_date": "2014-06-06T00:00:00Z"
+        }
+    }
+]

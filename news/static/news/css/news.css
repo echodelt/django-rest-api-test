@@ -1,0 +1,132 @@
+#news-manage-container {
+    font-family: Verdana,Geneva,sans-serif;
+    background-color: #fff;
+    padding: 15px;
+}
+
+#news-manage-container label.col-form-label {
+    font-size: 13px;
+    text-align: right;
+}
+
+#news-manage-container input.form-control {
+    font-size: 13px;
+
+}
+
+#news-manage-container div.article-action h1 {
+    font-size: 14px;
+    font-weight: bold;
+    padding-bottom: 15px;
+}
+
+#news-manage-container div.article-action-details {
+    font-size: 13px;
+    padding-top: 0px;
+    padding-bottom: 15px;
+}
+
+#news-manage-container div.article-action-details div.details {
+    text-align: justify;
+}
+
+#news-manage-container div.article-action-confirmation {
+    font-size: 13px;
+    padding-top: 0px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+#news-manage-container div.article-action-confirmation div.message-right,
+#news-manage-container div.article-action-confirmation div.message-justified {
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+}
+
+#news-manage-container div.article-action-confirmation div.message-centered {
+    text-align: center;
+}
+
+#news-manage-container div.article-action-confirmation div.message-justified {
+    text-align: justify;
+}
+
+#news-manage-container form div.validation-error {
+    color: #ff0000;
+    text-align: justify;
+    padding-top: 10px;
+    padding-bottom: 0px;
+}
+
+#news-manage-container form div.validation-error ul {
+    padding-left: 0px;
+}
+
+#news-manage-container form div.validation-error ul li {
+    list-style-type: none;
+}
+
+#news-manage-container div.article-view {
+
+}
+
+#news-manage-container div.article-view div.article-row {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+#news-manage-container div.article-view div.article-row div.article-field-name {
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#news-manage-container div.article-view div.article-row div.article-field-value {
+    text-align: left;
+    font-size: 13px;
+}
+
+#news-manage-container div.article-actions {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#news-manage-container .btns-containers {
+    display: inline-block;
+    margin: 5px;
+}
+
+
+#news-manage-container .articles-list-row {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#news-manage-container .add-article-button {
+    margin-top: 20px;
+
+}
+
+@media(max-width:767px){
+    #news-manage-container div.article-view div.article-row div.article-field-name {
+        text-align: left;
+    }
+}
+
+@media(min-width:768px){
+    #news-manage-container div.article-view div.article-row div.article-field-name {
+        text-align: right;
+    }
+}
+
+@media(min-width:992px){
+    #news-manage-container div.article-view div.article-row div.article-field-name {
+        text-align: right;
+    }
+}
+
+@media(min-width:1200px){
+    #news-manage-container div.article-view div.article-row div.article-field-name {
+        text-align: right;
+    }
+}
