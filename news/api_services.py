@@ -15,8 +15,6 @@ from rest_framework.renderers import JSONRenderer
 from .serializers import ArticleSerializer
 
 
-API_BASE_URL = settings.API_BASE_URL
-
 DEFAULT_REQUESTS_HEADERS = {
     settings.API_AUTH_KEY_NAME: settings.API_AUTH_KEY_VALUE,
     "Accept": "application/json"
@@ -68,7 +66,10 @@ def get_articles():
     Retreives the articles list (via an API request)
     """
 
-    endpoint = "%s%s" % (API_BASE_URL, reverse("api:articles-list"))
+    endpoint = "%s%s" % (
+        settings.API_BASE_URL,
+        reverse("api:articles-list")
+        )
     headers = DEFAULT_REQUESTS_HEADERS
     r = requests.get(
         endpoint,
@@ -96,7 +97,10 @@ def get_article(pk):
     Retreives an article identified by its primary key (via an API request)
     """
 
-    endpoint = "%s%s" % (API_BASE_URL, reverse("api:articles-detail", kwargs={'pk': pk}))
+    endpoint = "%s%s" % (
+        settings.API_BASE_URL,
+            reverse("api:articles-detail", kwargs={'pk': pk})
+            )
     headers = DEFAULT_REQUESTS_HEADERS
     r = requests.get(
         endpoint,
@@ -127,7 +131,9 @@ def create_article(article):
     serializer = ArticleSerializer(data=article)
     serializer.is_valid(raise_exception=True)
 
-    endpoint = "%s%s" % (API_BASE_URL, reverse("api:articles-list"))
+    endpoint = "%s%s" % (
+        settings.API_BASE_URL, reverse("api:articles-list")
+        )
     headers = POST_PUT_REQUESTS_HEADERS
     payload = JSONRenderer().render(serializer.validated_data)
     r = requests.post(
@@ -159,7 +165,9 @@ def update_article(pk, article):
 
     serializer = ArticleSerializer(data=article)
     serializer.is_valid(raise_exception=True)
-    endpoint = "%s%s" % (API_BASE_URL, reverse("api:articles-detail", kwargs={'pk': pk}))
+    endpoint = "%s%s" % (
+        settings.API_BASE_URL, reverse("api:articles-detail", kwargs={'pk': pk})
+        )
     headers = POST_PUT_REQUESTS_HEADERS
     payload = JSONRenderer().render(serializer.validated_data)
     r = requests.put(
@@ -185,7 +193,9 @@ def delete_article(pk):
     Deletes an article (via an API request)
     """
 
-    endpoint = "%s%s" % (API_BASE_URL, reverse("api:articles-detail", kwargs={'pk': pk}))
+    endpoint = "%s%s" % (
+        settings.API_BASE_URL, reverse("api:articles-detail", kwargs={'pk': pk})
+        )
     headers = DEFAULT_REQUESTS_HEADERS
     r = requests.delete(
         endpoint,
